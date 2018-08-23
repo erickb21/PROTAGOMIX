@@ -19,16 +19,21 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-/*--------------------------------------------------------------
+/*#region Table of contents */
+/* --------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# generic class
 # Normalize
 # Typography
+# Accueil
 # Elements
 # Forms
 # Navigation
 	## Links
 	## Menus
+# Header
+#Footer
 # Accessibility
 # Alignments
 # Clearings
@@ -41,6 +46,41 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/*#endregion */
+
+/*#region Generic class */
+/*------------------------------------------------------------
+    Generic class
+--------------------------------------------------------------*/
+.w100prc{
+    width:100%;
+}
+
+.h100prc{
+    height:100%;
+}
+
+.txtaligncenter{
+    text-align:center;
+}
+
+.paddingall10px{
+    padding:10px;
+}
+.paddingall20px{
+    padding:20px;
+}
+
+fontsize05rem{
+    font-size:0.5rem;
+}
+/*#endregion */
+
+/*#region Norlalize */
+
+
+
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -55,8 +95,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  */
 
 html {
-	line-height: 1.15; /* 1 */
-	-webkit-text-size-adjust: 100%; /* 2 */
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    font-size: 62.5%;
+    font-family: 'Raleway', sans-serif;
+    color:#707070;
 }
 
 /* Sections
@@ -83,15 +126,17 @@ h1 {
 /* Grouping content
 	 ========================================================================== */
 
+.content-area{
+    height:90vh;
+}
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-
 hr {
-	box-sizing: content-box; /* 1 */
-	height: 0; /* 1 */
-	overflow: visible; /* 2 */
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
 }
 
 /**
@@ -385,7 +430,104 @@ template {
 [hidden] {
 	display: none;
 }
+/*#endregion */
 
+/*#region Accueil */
+/*--------------------------------------------------------------
+# Template Accueil
+--------------------------------------------------------------*/
+.bandeau {
+    width: 100%;
+    height: 50vh;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows:auto;
+}
+
+.logobandeau {
+    height:50vh;
+}
+
+.bandeau-droite{
+    background-color: #4c42e2;
+}
+.bandeau-gauche {
+    background-color: #FFCC05;
+}
+
+    .recentpostcategories {
+        width: 100%;
+    }
+
+/*************************/
+/*    widgets accueil    */
+/*************************/
+.accueil-header-widget{}
+
+.accueil_widget_area {
+    width:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+
+/*Widget Actus*/
+.actus-widget{
+    display:flex;
+    flex-direction:column;
+    /*align-content:space-around;*/
+}
+
+.actu-title {
+}
+
+.tittleactu {
+    margin-left:5vw;
+    padding-left:10px;
+    width: 200px;
+    height: 30px;
+    background-color: #000;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.articlesaccueil{
+    width:100%;
+    height:30vh;
+    display:inline-flex;
+    align-content:space-around;
+    /*list-style:none;*/
+}
+
+.postaccueil{
+    padding-left:5.1vw;
+    padding-right:5.1vw;
+    width:33%;
+    background-color:#fff;
+}
+.posttitle{
+    font-weight:bold;
+}
+
+    .posttitle a {
+        text-decoration:none;
+    }
+
+.extraitactu {
+    padding:5px;
+}
+    .extraitactu a {
+        font-size:1.2rem;
+    }
+
+
+.extrait{
+    min-height:20vh;
+}
+/*#endregion */
+/*#region Typography */
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -395,11 +537,11 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
+    color: #707070;
+    font-family: sans-serif;
+    /*font-size: 16px;*/
+    font-size: 1.6rem;
+    line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -453,7 +595,9 @@ mark, ins {
 big {
 	font-size: 125%;
 }
+/*#endregion */
 
+/*#region Elements */
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -469,7 +613,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background:#fff;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -522,6 +666,12 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+/*#endregion */
+
+/*#region Forms */
+
+
+
 
 /*--------------------------------------------------------------
 # Forms
@@ -606,7 +756,9 @@ select {
 textarea {
 	width: 100%;
 }
+/*#endregion */
 
+/*#region Navigation */
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -614,15 +766,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #707070;
 }
 
-a:visited {
+/*a:visited {
 	color: purple;
-}
+}*/
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #4c42e2;
 }
 
 a:focus {
@@ -637,10 +789,18 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+    clear: both;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    font-size: 1.6rem;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.sub-menu {
+
 }
 
 .main-navigation ul {
@@ -651,7 +811,7 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	/*box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);*/
 	float: left;
 	position: absolute;
 	top: 100%;
@@ -687,6 +847,16 @@ a:hover, a:active {
 	display: block;
 	text-decoration: none;
 }
+.menu-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #707070;
+    margin-left:5px;
+    margin-right:5px;
+    margin-top:2px;
+    border-radius:2px;
+    background-color:#fff;
+}
 
 /* Small menu. */
 .menu-toggle,
@@ -710,6 +880,7 @@ a:hover, a:active {
 	overflow: hidden;
 }
 
+
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -724,22 +895,80 @@ a:hover, a:active {
 	text-align: right;
 	width: 50%;
 }
+/*#endregion */
+
+/*#region Headder */
+/*--------------------------------------------------------------
+    Headder
+---------------------------------------------------------------*/
+.site-header {
+    background-color: white;
+    height:10vh;
+}
+
+.site-description {
+}
+
+
+/*#endregion */
+
+/*#region Footer */
+/*--------------------------------------------------------------
+ #   Footer
+---------------------------------------------------------------*/
+.site-footer {
+    background-color: red;
+    height:150px;
+}
+
+.containergridblock {
+    display: grid;
+    grid-template-columns: 19vw 78vw;
+    grid-template-rows: auto;
+    grid-column-gap: 1vw;
+}
+
+.itemgrid {
+    background-color: #fff;
+    padding:20px;
+}
+
+.site-info {
+    display: grid;
+    background-color: black;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-column-gap: 1px;
+    grid-template-rows: auto;
+    height: 100%;
+}
+/*#endregion */
+
+/*#region Main */
+.site-main{
+    background-color:aqua;
+}
+/*#endregion */
+
+/*#region Accessibility */
+
+
+
 
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
 .screen-reader-text:focus {
@@ -768,7 +997,9 @@ a:hover, a:active {
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
+/*#endregion */
 
+/*#region alignements */
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
@@ -790,7 +1021,9 @@ a:hover, a:active {
 	margin-left: auto;
 	margin-right: auto;
 }
+/*#endregion */
 
+/*#region name */
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -819,7 +1052,9 @@ a:hover, a:active {
 .site-footer:after {
 	clear: both;
 }
+/*#endregion */
 
+/*#region Widgets */
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -831,7 +1066,9 @@ a:hover, a:active {
 .widget select {
 	max-width: 100%;
 }
+/*#endregion */
 
+/*#region Content */
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -860,7 +1097,9 @@ a:hover, a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+/*#endregion */
 
+/*#region comments */
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -871,7 +1110,9 @@ a:hover, a:active {
 .bypostauthor {
 	display: block;
 }
+/*#endregion */
 
+/*#region infinite scroll */
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -886,7 +1127,9 @@ a:hover, a:active {
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+/*#endregion */
 
+/*#region media */
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -910,6 +1153,7 @@ object {
 .custom-logo-link {
 	display: inline-block;
 }
+
 
 /*--------------------------------------------------------------
 ## Captions
@@ -982,3 +1226,5 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*#endregion */

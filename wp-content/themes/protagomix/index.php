@@ -50,8 +50,40 @@ get_header();
 
 		endif;
 		?>
+<section id="contenu">
+<!--lister les articles de wp-->
+<?php 
+//boucle wp
+if (have_posts() ){
+while (have_posts() ){
+the_post();
+?>
 
+<article class="actu">
+<h1>Protagomix crew</h1>
+<figure class="img_intro"> 
+<!--pour que l'image soit cliquable::-->
+<a href="<?php the_permalink(); ?>"> <?php the_post_thumbnail("thumbnail"); ?></a>
+
+</figure>
+<?php the_content('en savoir plus'); ?>
+<p>
+<?php comments_number(); ?>
+
+<?php the_tags();
+$category = get_the_category();
+echo "Catégorie: ".$category[0]->name;
+?>
+</p>
+</article>
+
+<?php
+}
+}
+?>
+</section>
 		</main><!-- #main -->
+
 	</div><!-- #primary -->
 
 <?php
