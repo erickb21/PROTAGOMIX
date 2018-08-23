@@ -294,7 +294,7 @@ class WP_Widget_Recent_Posts_Accueil extends WP_Widget {
 				?>
 				
 					<p class="posttitle"><a href="<?php the_permalink( $recent_post->ID ); ?>"><?php echo $title ; ?></a></p>
-                    <div class="extraitactu"><?php echo excerpt_read_more_link('<div class"extrait"' .get_the_excerpt($recent_post->ID).'</div>'.'<br />'); ?></ div>
+                    <div class="extraitactu"><?php echo excerpt_read_more_link(get_the_excerpt($recent_post->ID)).'<br />'; ?></ div>
 					
 
                     <?php if ( $show_date ) : ?>

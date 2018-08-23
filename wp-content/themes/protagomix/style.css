@@ -524,7 +524,8 @@ template {
 
 
 .extrait{
-    min-height:20vh;
+    min-height:30vh;
+    background-color:aquamarine;
 }
 /*#endregion */
 /*#region Typography */

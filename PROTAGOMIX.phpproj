@@ -2806,6 +2806,7 @@
     <Content Include="wp-content\themes\protagomix\LICENSE" />
     <Content Include="wp-content\themes\protagomix\phpcs.xml.dist" />
     <Content Include="wp-content\themes\protagomix\protagomix.sql" />
+    <Content Include="wp-content\themes\protagomix\protagomix.wordpress.2018-08-23.xml" />
     <Content Include="wp-content\themes\protagomix\README.md" />
     <Content Include="wp-content\themes\protagomix\readme.txt" />
     <Content Include="wp-content\themes\protagomix\rtl.css" />
